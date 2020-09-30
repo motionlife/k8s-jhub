@@ -21,12 +21,10 @@
           <div class="inputContainer">
             <br>
             <center>
-              <h3>
-                Google OAuth 2.0
-              </h3>
+              <h3> Google OAuth 2.0 </h3>
             </center>
             <center>
-              <a role="button" id="my-signin2-id" class='my-signin2-id' href='{{authenticator_login_url}}'>
+              <a role="button" id="google-signin2" href='{{authenticator_login_url}}'>
             </center>
             <div class="inputContainer">
             </div>
@@ -34,8 +32,8 @@
               <label class="inputLabel" for="Username">Username</label>
               <br>
               <input id="username_input" title="Username" name="username" class="inp-full-width has-checkmark"
-                required="" placeholder="" val="{{username}}" aria-label="Username"
-                autocomplete="off" type="text" disabled>
+                required="" placeholder="" val="{{username}}" aria-label="Username" autocomplete="off" type="text"
+                disabled>
               <br>
             </div>
             <div class="inputContainer">
@@ -52,15 +50,15 @@
 
             <div id="helpContainer">
               <p>Request access? <a href="mailto:hxx160130@utdallas.edu" target="_blank">Contact Admin</a>
-              <br>
-              How to use? <a href="https://jupyter.org/index.html" target="_blank">About JupyterHub</a></p>
+                <br>
+                How to use? <a href="https://jupyter.org/index.html" target="_blank">About JupyterHub</a></p>
             </div>
           </div>
         </form>
       </div>
     </div>
     <div class="bookmarkMessage">
-      <h3>Welcome to JupyterHub for Machine Learning Lab</h3>
+      <h3>Welcome to JupyterHub from Machine Learning Lab</h3>
     </div>
   </div>
 </div>
@@ -88,18 +86,4 @@
     form.find('.feedback-widget>*').toggleClass('fa-pulse');
   });
 </script>
-<script>
-  function renderButton() {
-    gapi.signin2.render('my-signin2-id', {
-      'scope': 'profile email',
-      'width': 240,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'dark',
-      'onsuccess': null,
-      'onfailure': null
-    });
-  }
-</script>
-<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 {% endblock %}
