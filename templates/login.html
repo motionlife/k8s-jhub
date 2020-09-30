@@ -24,8 +24,10 @@
               <h3> Google OAuth 2.0 </h3>
             </center>
             <center>
-              <a role="button" href='{{authenticator_login_url}}'>
-              <img id="google-signin2" width="200px" height="52px" src="https://personal.utdallas.edu/~hxx160130/assets/jhub/images/google-logo/btn_google_signin_dark_normal_web@2x.png" alt="Google">
+              <a role="button" id="google-signin2" href='{{authenticator_login_url}}'>
+                <img width="200px" height="52px"
+                  src="https://personal.utdallas.edu/~hxx160130/assets/jhub/images/google-logo/btn_google_signin_dark_normal_web@2x.png"
+                  alt="Google">
               </a>
             </center>
             <div class="inputContainer">
@@ -84,6 +86,11 @@
     form.find('.feedback-container>input').attr('disabled', true);
     form.find('.feedback-container>*').toggleClass('hidden');
     form.find('.feedback-widget>*').toggleClass('fa-pulse');
+  });
+  $('#google-signin2').on('mouseover', function () {
+    $(this).find('img').attr('src', 'https://personal.utdallas.edu/~hxx160130/assets/jhub/images/google-logo/btn_google_signin_dark_focus_web@2x.png');
+  }).on('click', function () {
+    $(this).find('img').attr('src', 'https://personal.utdallas.edu/~hxx160130/assets/jhub/images/google-logo/btn_google_signin_dark_pressed_web@2x.png');
   });
 </script>
 {% endblock %}
