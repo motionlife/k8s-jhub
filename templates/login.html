@@ -8,81 +8,6 @@
 
 {% block main %}
 
-<!-- {% block login %}
-<div id="login-main" class="container">
-  {% if custom_html %}
-  {{ custom_html | safe }}
-  {% elif login_service %}
-  <div class="service-login">
-    <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-      Sign in with {{login_service}}
-    </a>
-  </div>
-  {% else %}
-  <form action="{{login_url}}?next={{next}}" method="post" role="form">
-    <div class="auth-form-header">
-      Sign in
-    </div>
-    <div class='auth-form-body'>
-      <p id='insecure-login-warning' class='hidden'>
-        Warning: JupyterHub seems to be served over an unsecured HTTP connection.
-        We strongly recommend enabling HTTPS for JupyterHub.
-      </p>
-      {% if login_error %}
-      <p class="login_error">
-        {{login_error}}
-      </p>
-      {% endif %}
-      <label for="username_input">Username:</label>
-      <input id="username_input" type="text" autocapitalize="off" autocorrect="off" class="form-control" name="username"
-        val="{{username}}" tabindex="1" autofocus="autofocus" />
-      <label for='password_input'>Password:</label>
-      <input type="password" class="form-control" name="password" id="password_input" tabindex="2" />
-      <div class="feedback-container">
-        <input id="login_submit" type="submit" class='btn btn-jupyter' value='Sign In' tabindex="3" />
-        <div class="feedback-widget hidden">
-          <i class="fa fa-spinner"></i>
-        </div>
-      </div>
-    </div>
-  </form>
-  {% endif %}
-</div>
-{% endblock login %} -->
-
-<!-- {% block login %}
-<div class="container-fluid body-wrapper">
-  <div class="row">
-    <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-      <div class="wrapper">
-        <a href="https://www.utdallas.edu"><img src="https://idp.utdallas.edu/idp/images/utdlogo.png"
-            alt="The University of Texas at Dallas logo" class="logo"></a>
-        <div class="stripe"></div>
-        <h1 class="text-normal" role="banner">Welcome to JupyterHub for Machine Learning Lab</h1>
-        <div id="loginTable1" class="identity-box">
-          <div class="row">
-            {% if custom_html %}
-            {{ custom_html | safe }}
-            {% elif login_service %}
-            <div class="col-sm-12 col-md-5">
-              <a role="button" id="my-signin2-id" class='my-signin2-id' href='{{authenticator_login_url}}'>
-              </a>
-            </div>
-            {% endif %}
-          </div>
-          <div class="row" id="help-links">
-            <div class="col-sm-12 col-md-7">
-              <a class="link-padding" href="mailto:hxx160130@utdallas.edu">Request access</a>
-              <a class="link-padding" href="https://jupyter.org/index.html">About JupyterHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% endblock login %} -->
-
 {% block login %}
 <div id="login-main" class="container">
   <div class="loginTable">
@@ -104,7 +29,6 @@
               <a role="button" id="my-signin2-id" class='my-signin2-id' href='{{authenticator_login_url}}'>
             </center>
             <div class="inputContainer">
-
             </div>
             <div class="inputContainer">
               <label class="inputLabel" for="Username">Username</label>
@@ -112,8 +36,6 @@
               <input id="username_input" title="Username" name="username" class="inp-full-width has-checkmark"
                 required="" placeholder="Enter Your Username" val="{{username}}" aria-label="Username"
                 autocomplete="off" type="text" disabled>
-              <!-- <input id="username_input" type="text" autocapitalize="off" autocorrect="off" class="form-control" name="username"
-              val="{{username}}" tabindex="1" autofocus="autofocus" disabled/>  -->
               <br>
             </div>
             <div class="inputContainer">
@@ -121,13 +43,11 @@
               <br>
               <input id="password_input" title="Password" name="password" class="inp-full-width has-checkmark"
                 required="" placeholder="Enter Your Password" aria-label="Password" autocomplete="off" type="password" disabled>
-              <!-- <input type="password" class="form-control" name="password" id="password_input" tabindex="2" disabled/> -->
             </div>
 
             <div class="submitContainer">
               <button name="_eventId_proceed" id="login_submit" type="submit" value='Sign In'
                 class="btn btn-primary btn-full-width" disabled> Login </button>
-              <!-- <input id="login_submit" type="submit" class='btn btn-jupyter' value='Sign In' tabindex="3" disabled/> -->
             </div>
 
             <div id="helpContainer">
@@ -147,8 +67,6 @@
 </div>
 
 {% endblock login %}
-
-
 {% endblock %}
 
 {% block stylesheet %}
