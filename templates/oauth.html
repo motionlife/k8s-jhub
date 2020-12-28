@@ -26,15 +26,10 @@
       {% for scope in scopes %}
       <div class="checkbox input-group">
         <label>
-          <input type="checkbox"
-                 name="scopes"
-                 checked="true"
-                 title="This authorization is required"
-                 disabled="disabled" {# disabled because it's required #}
-                 value="{{ scope }}"
-          />
+          <input type="checkbox" name="scopes" checked="true" title="This authorization is required" disabled="disabled"
+            {# disabled because it's required #} value="{{ scope }}" />
           {# disabled checkbox isn't included in form, so this is the real one #}
-          <input type="hidden" name="scopes" value="{{ scope }}"/>
+          <input type="hidden" name="scopes" value="{{ scope }}" />
           <span>
             {# TODO: use scope description when there's more than one #}
             See your JupyterHub username and group membership (read-only).
@@ -42,7 +37,7 @@
         </label>
       </div>
       {% endfor %}
-      <input type="submit" value="Authorize" class="form-control btn-jupyter"/>
+      <input type="submit" value="Authorize" class="form-control btn-jupyter" />
     </form>
   </div>
 </div>
