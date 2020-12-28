@@ -1,46 +1,32 @@
 {% extends "page.html" %}
 {% if announcement_home %}
-{% set announcement = announcement_home %}
+  {% set announcement = announcement_home %}
 {% endif %}
 
 {% block main %}
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 ">
-      <div class="col-sm-10 col-sm-offset-1  text-center">
-        <div class="day_0_bg"
-          style="background-image: url(https://storage.googleapis.com/utd/assets/day0.png); height: 400px; background-position: center;">
-        </div>
-        <div class="contant_box" style="margin-top:-40px;">
-          <h2 class="text-center" style="font-size:30px;">Welcome to the Hub!</h2>
-          <p>What service would you like to start with?</p>
-          {% if default_server.active %}
-          <a id="stop" role="button"
-            style="color: #fff!important;padding: 10px 20px;background: #e9482b;margin: 20px 0;display: inline-block;">
-            Stop My Server
-          </a>
-          {% endif %}
-          <a id="start" role="button"
-            style="color: #fff!important;padding: 10px 20px;background: #39ac31;margin: 20px 0;display: inline-block;"
-            href="{{ url }}">
-            {% if not default_server.active %}Start{% endif %}
-            My Server
-          </a>
-        </div>
-      </div>
+    <div class="text-center">
+      {% if default_server.active %}
+        <a id="stop" role="button" class="btn btn-lg btn-danger">
+          Stop My Server
+        </a>
+      {% endif %}
+      <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ url }}">
+      {% if not default_server.active %}Start{% endif %}
+      My Server
+      </a>
     </div>
   </div>
-
   {% if allow_named_servers %}
   <h2>
-    Named Servers
+  Named Servers
   </h2>
 
   <p>
-    In addition to your default server,
-    you may have additional {% if named_server_limit_per_user > 0 %}{{ named_server_limit_per_user }} {% endif
-    %}server(s) with names.
-    This allows you to have more than one server running at the same time.
+  In addition to your default server,
+  you may have additional {% if named_server_limit_per_user > 0 %}{{ named_server_limit_per_user }} {% endif %}server(s) with names.
+  This allows you to have more than one server running at the same time.
   </p>
 
   {% set named_spawners = user.all_spawners(include_default=False)|list %}
@@ -83,14 +69,13 @@
         </td>
         {# actions #}
         <td>
-          <a role="button" class="stop-server btn btn-xs btn-danger{% if not spawner.active %} hidden{% endif %}"
-            id="stop-{{ spawner.name }}">stop</a>
-          <a role="button" class="start-server btn btn-xs btn-primary {% if spawner.active %} hidden{% endif %}"
-            id="start-{{ spawner.name }}" href="{{ base_url }}spawn/{{ user.name }}/{{ spawner.name }}">
+          <a role="button" class="stop-server btn btn-xs btn-danger{% if not spawner.active %} hidden{% endif %}" id="stop-{{ spawner.name }}">stop</a>
+          <a role="button" class="start-server btn btn-xs btn-primary {% if spawner.active %} hidden{% endif %}" id="start-{{ spawner.name }}"
+          href="{{ base_url }}spawn/{{ user.name }}/{{ spawner.name }}"
+          >
             start
           </a>
-          <a role="button" class="delete-server btn btn-xs btn-danger{% if spawner.active %} hidden{% endif %}"
-            id="delete-{{ spawner.name }}">delete</a>
+          <a role="button" class="delete-server btn btn-xs btn-danger{% if spawner.active %} hidden{% endif %}" id="delete-{{ spawner.name }}">delete</a>
         </td>
       </tr>
       {% endfor %}
@@ -103,6 +88,6 @@
 {% block script %}
 {{ super() }}
 <script type="text/javascript">
-  require(["home"]);
+require(["home"]);
 </script>
 {% endblock %}
