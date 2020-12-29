@@ -18,7 +18,7 @@
         background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(251 251 251) 100%);
         box-shadow: 0 0 15px 0 #d1d1d1;
         color: #3e3e3e;
-        padding-bottom: 20px;
+        padding-bottom: 7px;
         max-width: 768px;
         min-width: 360px;
         position: absolute;
@@ -28,12 +28,12 @@
         transform: translate(-50%, -50%);">
             {% block heading %}
                 <div class="text-center">
-                    <h1>Server Options</h1>
+                    <h2 style="margin-top: 12px; font-size: 27px;">Server Options</h2>
                 </div>
             {% endblock %}
             <div style="padding-left: 2px; padding-right: 2px;">
                 {% if for_user and user.name != for_user.name -%}
-                    <h4>Spawning server for: <span class="label label-info" >{{ for_user.name }}</span> </h4>
+                    <h5>Spawning server for: <span class="label label-info" >{{ for_user.name }}</span> </h5>
                 {% endif -%}
                 {% if error_message -%}
                     <p class="spawn-error-msg text-danger">
@@ -43,7 +43,7 @@
                 <form enctype="multipart/form-data" id="spawn_form" action="{{ url }}" method="post" role="form">
                     {{ spawner_options_form | safe }}
                     <br>
-                    <div class="feedback-container" style="margin-top: -15px;">
+                    <div class="feedback-container" style="margin-top: -27px;">
                         <input type="submit" value="Start" class="btn btn-jupyter form-control">
                         <div class="feedback-widget hidden">
                             <i class="fa fa-spinner"></i>
