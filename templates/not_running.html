@@ -3,48 +3,50 @@
 {% block main %}
 
 <div class="container">
-  <div class="row">
-    <div class="text-center">
-      {% block heading %}
-      <h1>
-      {% if failed %}
-      Spawn failed
-      {% else %}
-      Server not running
-      {% endif %}
-      </h1>
-      {% endblock %}
-      {% block message %}
-      <p>
-        {% if failed %}
-        The latest attempt to start your server {{ server_name }} has failed.
-        {% if failed_message %}
-          {{ failed_message }}
-        {% endif %}
-        Would you like to retry starting it?
-        {% else %}
-        Your server {{ server_name }} is not running.
-          {% if implicit_spawn_seconds %}
-          It will be restarted automatically.
-          If you are not redirected in a few seconds,
-          click below to launch your server.
+      <div class="row">
+      <div style="background: url(https://storage.googleapis.com/utd/assets/rocket.png) no-repeat center center; background-size: auto 100%; height: 400px;">
+      </div>
+        <div class="text-center">
+          {% block heading %}
+          <h1>
+          {% if failed %}
+          Spawn failed
           {% else %}
-          Would you like to start it?
+          Server not running
           {% endif %}
-        {% endif %}
-      </p>
-      {% endblock %}
-      {% block start_button %}
-      <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ spawn_url }}">
-        {% if failed %}
-        Relaunch
-        {% else %}
-        Launch
-        {% endif %}
-        Server {{ server_name }}
-      </a>
-      {% endblock %}
-    </div>
+          </h1>
+          {% endblock %}
+          {% block message %}
+          <p>
+            {% if failed %}
+            The latest attempt to start your server {{ server_name }} has failed.
+            {% if failed_message %}
+              {{ failed_message }}
+            {% endif %}
+            Would you like to retry starting it?
+            {% else %}
+            Your server {{ server_name }} is not running.
+              {% if implicit_spawn_seconds %}
+              It will be restarted automatically.
+              If you are not redirected in a few seconds,
+              click below to launch your server.
+              {% else %}
+              Would you like to start it?
+              {% endif %}
+            {% endif %}
+          </p>
+          {% endblock %}
+          {% block start_button %}
+          <a id="start" role="button" class="btn btn-success" href="{{ spawn_url }}">
+            {% if failed %}
+            Relaunch
+            {% else %}
+            Launch
+            {% endif %}
+            Server {{ server_name }}
+          </a>
+          {% endblock %}
+        </div>
   </div>
 </div>
 
