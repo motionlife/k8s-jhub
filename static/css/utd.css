@@ -43,7 +43,7 @@ a:hover {
 	display: table;
 	vertical-align: middle;
 	text-align: center;
-    background: linear-gradient(180deg, rgba(0, 114, 78, 1) 0%, rgba(21, 71, 52, 1) 100%);
+    background: linear-gradient(180deg, rgb(0, 114, 78) 0%, rgb(21, 71, 52) 100%);
 	box-shadow: 0 0 15px 0 #6e6e6e;
 	color: #3e3e3e;
 	max-width: 600px;

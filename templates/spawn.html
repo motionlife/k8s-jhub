@@ -1,49 +1,69 @@
 {% extends "page.html" %}
 {% if announcement_spawn %}
-  {% set announcement = announcement_spawn %}
+    {% set announcement = announcement_spawn %}
 {% endif %}
 
 {% block main %}
 
-<div class="container">
-  {% block heading %}
-  <div class="row text-center">
-    <h1>Server Options</h1>
-  </div>
-  {% endblock %}
-  <div class="row col-sm-offset-2 col-sm-8">
-    {% if for_user and user.name != for_user.name -%}
-      <p>Spawning server for {{ for_user.name }}</p>
-    {% endif -%}
-    {% if error_message -%}
-      <p class="spawn-error-msg text-danger">
-        Error: {{error_message}}
-      </p>
-    {% endif %}
-    <form enctype="multipart/form-data" id="spawn_form" action="{{url}}" method="post" role="form">
-      {{spawner_options_form | safe}}
-      <br>
-      <div class="feedback-container">
-        <input type="submit" value="Start" class="btn btn-jupyter form-control">
-        <div class="feedback-widget hidden">
-          <i class="fa fa-spinner"></i>
+    <div class="container"
+         style="flex: auto; width: auto; height: calc(100vh - 43px); margin-top: -20px;
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
+    overflow: auto;
+    box-sizing: border-box;
+    background: rgba(251,251,251,1) url(https://storage.googleapis.com/utd/assets/dog.svg) no-repeat left bottom;">
+        <div style="display: table;
+        vertical-align: middle;
+        background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(251 251 251) 100%);
+        box-shadow: 0 0 15px 0 #d1d1d1;
+        color: #3e3e3e;
+        padding-bottom: 20px;
+        max-width: 768px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);">
+            {% block heading %}
+                <div class="text-center">
+                    <h1>Server Options</h1>
+                </div>
+            {% endblock %}
+            <div style="padding-left: 2px; padding-right: 2px;">
+                {% if for_user and user.name != for_user.name -%}
+                    <p>Spawning server for {{ for_user.name }}</p>
+                {% endif -%}
+                {% if error_message -%}
+                    <p class="spawn-error-msg text-danger">
+                        Error: {{ error_message }}
+                    </p>
+                {% endif %}
+                <form enctype="multipart/form-data" id="spawn_form" action="{{ url }}" method="post" role="form">
+                    {{ spawner_options_form | safe }}
+                    <br>
+                    <div class="feedback-container" style="margin-top: -15px;">
+                        <input type="submit" value="Start" class="btn btn-jupyter form-control">
+                        <div class="feedback-widget hidden">
+                            <i class="fa fa-spinner"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-    </form>
-  </div>
-</div>
+    </div>
 
 {% endblock %}
 
 {% block script %}
-{{ super() }}
-<script>
-// setup onSubmit feedback
-$('form').submit((e) => {
-  var form = $(e.target);
-  form.find('.feedback-container>input').attr('disabled', true);
-  form.find('.feedback-container>*').toggleClass('hidden');
-  form.find('.feedback-widget>*').toggleClass('fa-pulse');
-});
-</script>
+    {{ super() }}
+    <script>
+        // setup onSubmit feedback
+        $('form').submit((e) => {
+            var form = $(e.target);
+            form.find('.feedback-container>input').attr('disabled', true);
+            form.find('.feedback-container>*').toggleClass('hidden');
+            form.find('.feedback-widget>*').toggleClass('fa-pulse');
+        });
+    </script>
 {% endblock %}
