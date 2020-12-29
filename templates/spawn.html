@@ -33,7 +33,7 @@
             {% endblock %}
             <div style="padding-left: 2px; padding-right: 2px;">
                 {% if for_user and user.name != for_user.name -%}
-                    <h3>Spawning server for: <span class="label label-success" >{{ for_user.name }}</span> </h3>
+                    <h4>Spawning server for: <span class="label label-info" >{{ for_user.name }}</span> </h4>
                 {% endif -%}
                 {% if error_message -%}
                     <p class="spawn-error-msg text-danger">
