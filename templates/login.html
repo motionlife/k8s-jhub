@@ -23,7 +23,7 @@
             <!--<center>
               <h3> Google OAuth 2.0 </h3>
             </center> -->
-            <center>
+            <!-- <center>
               <a role="button" id="google-signin2" href='{{authenticator_login_url}}'>
                 <img width="200px" height="52px"
                   src="https://storage.googleapis.com/utd/assets/btn_google_signin_dark_normal_web%402x.png"
@@ -32,8 +32,8 @@
                   onmousedown="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_pressed_web%402x.png'"
                   border="0" alt="Google"/>
               </a>
-            </center>
-            <div class="inputContainer">
+            </center> -->
+            <!-- <div class="inputContainer">
               <label class="inputLabel" for="Username">Username</label>
               <br>
               <input id="username_input" title="Username" name="username" class="inp-full-width has-checkmark"
@@ -46,12 +46,20 @@
               <br>
               <input id="password_input" title="Password" name="password" class="inp-full-width has-checkmark"
                 required="" placeholder="" aria-label="Password" autocomplete="off" type="password" disabled>
-            </div>
-
+            </div> -->
+<!-- 
             <div class="submitContainer">
               <button name="_eventId_proceed" id="login_submit" type="submit" value='Sign In'
                 class="btn btn-primary btn-full-width" disabled> Login </button>
+            </div> -->
+
+            <div class="service-login">
+              <a role="button" class="btn btn-jupyter btn-lg" href="/n-a-a-vre/hub/oauth_login?next=">
+                Sign in
+              </a>
             </div>
+
+
 
             <div id="helpContainer">
               <p>Request access? <a href="mailto:S.Koulouzis@uva.nl" target="_blank">Contact Admin</a>
