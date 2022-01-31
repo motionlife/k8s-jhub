@@ -8,7 +8,7 @@ body {
 /* html {overflow: hidden;} */
 
 body {
-	background: url(https://storage.googleapis.com/utd/assets/bg.jpg);
+	background: url(../images/lw_backround.png);
 	background-repeat: no-repeat;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
@@ -21,12 +21,12 @@ a,
 a:active,
 a:focus,
 a:visited {
-	color: #008542;
+	color: #0f4e8a;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #008542;
+	color: #800075;
 	text-decoration: underline;
 }
 
@@ -43,9 +43,9 @@ a:hover {
 	display: table;
 	vertical-align: middle;
 	text-align: center;
-    background: linear-gradient(180deg, rgb(0, 114, 78) 0%, rgb(21, 71, 52) 100%);
+    background: linear-gradient(180deg, rgba(15,78,138,255) 0%, rgba(15,78,138,255) 100%);
 	box-shadow: 0 0 15px 0 #6e6e6e;
-	color: #3e3e3e;
+	color: #5a0202;
 	max-width: 600px;
 	min-width: 320px;
 	height: 150px;
@@ -53,7 +53,7 @@ a:hover {
 
 .loginTableRow {
 	display: table;
-	background-color: #fefefe;
+	background-color: #f3f3f3;
 }
 
 .contentLeft,
@@ -120,7 +120,7 @@ a:hover {
 }
 
 #netid, #username_input, #password_input, #password {
-	border: 1px solid #b7b1a9;
+	border: 1px solid #7a0000;
 	padding: 10px;
 	width: 170px;
 	text-align: left;
@@ -134,7 +134,7 @@ a:hover {
 	border: none;
 	display: inline-block;
 	background: linear-gradient(180deg, rgba(0, 114, 78, 1) 0%, rgba(21, 71, 52, 1) 100%);
-	color: #fff;
+	color: #f3f3f3;
 	border-radius: 5px;
 }
 
@@ -150,7 +150,7 @@ a:hover {
 	width: 100%;
 	font-size: 12px;
 	text-align: center;
-	background-color: #fefefe;
+	background-color: #b30027;
         padding: 0 !important;
         margin: 0 !important;
 }

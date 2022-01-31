@@ -9,52 +9,18 @@
 {% block main %}
 
 {% block login %}
-<div id="login-main" class="container">
+<div style="float: right" id="login-main" class="container">
   <div class="loginTable">
     <div class="loginTableRow">
       <div class="contentLeft">
-        <img src="https://bynder-public-eu-central-1.s3.amazonaws.com/media/9E3E0032-62BD-4694-A3CCB1BC17CA3CAF/D5C3A58D-786C-4BFB-989D2E4C91A3F5F3/89DFA3A7-84B3-465E-8F66BFA23FC678E7/thul-65429E6B-C389-4E38-B3160F0EA9005E76.png" alt="University of Amsterdam Informatics Institute" width="200" height="auto">
-        <img src="https://mns-research.nl/images/logo_hua931301caa9e2c039e68fbb874deb22a_17897_0x70_resize_lanczos_2.png" alt="Multiscale Networked System (MNS) group" width="100" height="auto">
-        <img src="https://www.eric-forum.eu/wp-content/uploads/1623770710092007_116468656.png" alt="LifeWatch ERIC" width="100" height="auto">
+        <img src="https://bynder-public-eu-central-1.s3.amazonaws.com/media/9E3E0032-62BD-4694-A3CCB1BC17CA3CAF/D5C3A58D-786C-4BFB-989D2E4C91A3F5F3/89DFA3A7-84B3-465E-8F66BFA23FC678E7/thul-65429E6B-C389-4E38-B3160F0EA9005E76.png" alt="University of Amsterdam Informatics Institute" width="6000" height="auto">
+        <img src="https://mns-research.nl/images/logo_hua931301caa9e2c039e68fbb874deb22a_17897_0x70_resize_lanczos_2.png" alt="Multiscale Networked System (MNS) group" width="50" height="auto">
+        <img src="https://www.eric-forum.eu/wp-content/uploads/1623770710092007_116468656.png" alt="LifeWatch ERIC" width="10" height="auto">
       </div>
       <div class="contentRight">
         <form id="login" name="login" action="/idp/profile/SAML2/POST/SSO?execution=e1s1" method="post">
           <input type="hidden" name="performauthentication" value="true">
           <div class="inputContainer">
-            <br>
-            <!--<center>
-              <h3> Google OAuth 2.0 </h3>
-            </center> -->
-            <!-- <center>
-              <a role="button" id="google-signin2" href='{{authenticator_login_url}}'>
-                <img width="200px" height="52px"
-                  src="https://storage.googleapis.com/utd/assets/btn_google_signin_dark_normal_web%402x.png"
-                  onmouseover="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_focus_web%402x.png'"
-                  onmouseout="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_normal_web%402x.png'"
-                  onmousedown="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_pressed_web%402x.png'"
-                  border="0" alt="Google"/>
-              </a>
-            </center> -->
-            <!-- <div class="inputContainer">
-              <label class="inputLabel" for="Username">Username</label>
-              <br>
-              <input id="username_input" title="Username" name="username" class="inp-full-width has-checkmark"
-                required="" placeholder="" val="{{username}}" aria-label="Username" autocomplete="off" type="text"
-                disabled>
-              <br>
-            </div>
-            <div class="inputContainer">
-              <label class="inputLabel" for="password">Password</label>
-              <br>
-              <input id="password_input" title="Password" name="password" class="inp-full-width has-checkmark"
-                required="" placeholder="" aria-label="Password" autocomplete="off" type="password" disabled>
-            </div> -->
-<!-- 
-            <div class="submitContainer">
-              <button name="_eventId_proceed" id="login_submit" type="submit" value='Sign In'
-                class="btn btn-primary btn-full-width" disabled> Login </button>
-            </div> -->
-
             <div class="service-login">
               <a role="button" class="btn btn-jupyter btn-lg" href="/n-a-a-vre/hub/oauth_login?next=">
                 Sign in
@@ -71,7 +37,7 @@
       </div>
     </div>
     <div class="bookmarkMessage">
-      <h3>Welcome to JupyterHub from LifeWatch</h3>
+      <h3>Welcome to the LifeWatch JupyterHub</h3>
     </div>
   </div>
 </div>
@@ -80,9 +46,7 @@
 {% endblock %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="https://storage.googleapis.com/utd/assets/utd.css" type="text/css" />
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" type="text/css" /> -->
- <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" type="text/css" /> -->
+<link rel="stylesheet" href="../static/css/utd.css" type="text/css" />
 {% endblock %}
 
 {% block script %}
