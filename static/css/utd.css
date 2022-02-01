@@ -35,7 +35,7 @@ a:hover {
 	width: 100hw;
 	height: 100vh;
 	display: flex;
-	justify-content: center;
+	justify-content: right;
 	align-items: center;
 }
 
