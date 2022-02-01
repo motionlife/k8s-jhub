@@ -1,0 +1,65 @@
+hub:
+  initContainers:
+    - name: git-clone-templates
+      image: alpine/git
+      args:
+        - clone
+        - --single-branch
+        - --branch=BRANCH
+        - --depth=1
+        - --
+        - https://github.com/QCDIS/k8s-jhub.git
+        - /etc/jupyterhub/custom
+      securityContext:
+        runAsUser: 0
+      volumeMounts:
+        - name: hub-templates
+          mountPath: /etc/jupyterhub/custom
+  extraVolumes:
+    - name: hub-templates
+      emptyDir: { }
+  extraVolumeMounts:
+    - name: hub-templates
+      mountPath: /etc/jupyterhub/custom
+  extraConfig:
+    templates: |
+      c.JupyterHub.template_paths = ['/etc/jupyterhub/custom/templates']
+  concurrentSpawnLimit: 10
+  consecutiveFailureLimit: 3
+  activeServerLimit: 5
+  namedServerLimitPerUser: 1
+  shutdownOnLogout: true
+  extraEnv:
+    OAUTH2_TLS_VERIFY: 'false'
+  baseUrl: /n-a-a-vre
+  config:
+    GenericOAuthenticator:
+      client_id: XXXXXXXXXXXXXXXXX
+      client_secret: XXXXXXXXXXXXXXXXX
+      oauth_callback_url: https://HOST:PORT/n-a-a-vre/hub/oauth_callback
+      authorize_url: https://HOST:PORT/auth/realms/n-a-a-vre/protocol/openid-connect/auth
+      token_url: https://HOST:PORT/auth/realms/n-a-a-vre/protocol/openid-connect/token
+      userdata_url: https://HOST:PORT/auth/realms/n-a-a-vre/protocol/openid-connect/userinfo
+      login_service: keycloak
+      username_key: preferred_username
+      userdata_params:
+        state: state
+    JupyterHub:
+      authenticator_class: generic-oauth
+      tornado_settings:
+        headers:
+          Content-Security-Policy: "frame-ancestors 'self' *"
+        cookie_options:
+          SameSite: "None"
+          Secure: "True"
+      tls_verify: false
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/add-base-url: "true"
+    kubernetes.io/tls-acme: "true"
+  tls:
+    - hosts:
+        - HOST
+      secretName: letsencrypt
