@@ -35,7 +35,7 @@ a:hover {
 	width: 100hw;
 	height: 100vh;
 	display: flex;
-	justify-content: right;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -217,4 +217,78 @@ body > noscript{
 } 
 body > nav.navbar{
 	display: none !important;
+}
+
+
+/*!
+*
+* Jupyter
+*
+*/
+
+.btn-jupyter {
+    color: #fff;
+    background-color: #0f4e8a;
+    border-color: #0f4e8a;
+	font-size: xx-large;
+	padding: 10 30px;
+}
+
+.btn-jupyter.focus,
+.btn-jupyter:focus {
+    color: #fff;
+    background-color: #0f4e8a;
+    border-color: #76270f
+}
+
+.btn-jupyter:hover {
+    color: #fff;
+    background-color: #0f4e8a;
+    border-color: #0f4e8a
+}
+
+.btn-jupyter.active,
+.btn-jupyter:active,
+.open > .dropdown-toggle.btn-jupyter {
+    color: #fff;
+    background-color: #0f4e8a;
+    border-color: #0f4e8a
+}
+
+.btn-jupyter.active.focus,
+.btn-jupyter.active:focus,
+.btn-jupyter.active:hover,
+.btn-jupyter:active.focus,
+.btn-jupyter:active:focus,
+.btn-jupyter:active:hover,
+.open > .dropdown-toggle.btn-jupyter.focus,
+.open > .dropdown-toggle.btn-jupyter:focus,
+.open > .dropdown-toggle.btn-jupyter:hover {
+    color: #fff;
+    background-color: #b64d0a;
+    border-color: #76270f
+}
+
+.btn-jupyter.active,
+.btn-jupyter:active,
+.open > .dropdown-toggle.btn-jupyter {
+    background-image: none
+}
+
+.btn-jupyter.disabled.focus,
+.btn-jupyter.disabled:focus,
+.btn-jupyter.disabled:hover,
+.btn-jupyter[disabled].focus,
+.btn-jupyter[disabled]:focus,
+.btn-jupyter[disabled]:hover,
+fieldset[disabled] .btn-jupyter.focus,
+fieldset[disabled] .btn-jupyter:focus,
+fieldset[disabled] .btn-jupyter:hover {
+    background-color: #F37524;
+    border-color: #E34F21
+}
+
+.btn-jupyter .badge {
+    color: #F37524;
+    background-color: #fff
 }
