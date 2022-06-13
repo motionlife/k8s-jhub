@@ -36,7 +36,7 @@ hub:
     GenericOAuthenticator:
       client_id: XXXXXXXXXXXXXXXXX
       client_secret: XXXXXXXXXXXXXXXXX
-      oauth_callback_url: https://HOST:PORT/n-a-a-vre/hub/oauth_callback
+      oauth_callback_url: https://HOST:PORT/VRE_PATH/hub/oauth_callback
       authorize_url: https://HOST:PORT/auth/realms/n-a-a-vre/protocol/openid-connect/auth
       token_url: https://HOST:PORT/auth/realms/n-a-a-vre/protocol/openid-connect/token
       userdata_url: https://HOST:PORT/auth/realms/n-a-a-vre/protocol/openid-connect/userinfo
